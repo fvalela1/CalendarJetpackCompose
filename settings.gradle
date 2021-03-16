@@ -1,0 +1,3 @@
+rootProject.name = "Calendar Jetpack Compose"
+include ':app'
+include ':CalendarJetPackCompose'

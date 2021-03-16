@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="navigate_month_next_content_description">Allows a user to navigate to the next month</string>
+    <string name="navigate_month_previous_content_description">Allows a user to navigate to the previous month</string>
+</resources>
