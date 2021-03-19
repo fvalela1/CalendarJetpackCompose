@@ -1,9 +1,10 @@
-package com.fvalela.calendarjetpackcompose.sample
+package com.fvalela.calendarjetpackcompose.sample.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.fvalela.calendarjetpackcompose.sample.util.ColourPicker
 import com.fvalela.calendarjetpackcompose.sample.model.SelectedDate
 
 class CalendarViewModel : ViewModel() {

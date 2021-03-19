@@ -1,4 +1,4 @@
-package com.fvalela.calendarjetpackcompose.sample
+package com.fvalela.calendarjetpackcompose.sample.util
 
 import androidx.compose.ui.graphics.Color
 

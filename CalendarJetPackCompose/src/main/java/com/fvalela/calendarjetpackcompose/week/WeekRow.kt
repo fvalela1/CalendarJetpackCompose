@@ -22,9 +22,10 @@ import java.time.ZoneId
 internal fun WeekRows(
     startDate: LocalDate,
     endDate: LocalDate,
-    onDayPressed: (Long) -> Unit,
+    onDayPressed: ((Long) -> Unit)?,
     verticalPadding: Dp,
     selectedDates: Collection<CalendarDate>,
+    dateCircleDiameter: Dp,
 ) {
     // todo (fvalela - issue#): add functionality to start and end week at specific weekdays
     //    val startWeekDay = startDate.dayOfWeek.value
@@ -37,6 +38,7 @@ internal fun WeekRows(
 
     while (currentWorkingDate.isBefore(endDate.plusDays(nbDaysAfterEndDateToShow.toLong()))) {
         when {
+            // date is before set starting date
             currentWorkingDate.isBefore(startDate) ->
                 WeekRow(
                     weekStartDate = currentWorkingDate,
@@ -45,7 +47,9 @@ internal fun WeekRows(
                     verticalPadding = verticalPadding,
                     onDayPressed = onDayPressed,
                     selectedDates = selectedDates,
+                    dateCircleDiameter = dateCircleDiameter,
                 )
+            // date is after set end date
             currentWorkingDate.isAfter(endDate.minusDays(6)) ->
                 WeekRow(
                     weekStartDate = currentWorkingDate,
@@ -53,13 +57,16 @@ internal fun WeekRows(
                     verticalPadding = verticalPadding,
                     onDayPressed = onDayPressed,
                     selectedDates = selectedDates,
+                    dateCircleDiameter = dateCircleDiameter,
                 )
+            // date is inbetween set start date and set end date
             currentWorkingDate.isAfter(startDate.minusDays(1)) && currentWorkingDate.isBefore(endDate.plusDays(1)) ->
                 WeekRow(
                     weekStartDate = currentWorkingDate,
                     verticalPadding = verticalPadding,
                     onDayPressed = onDayPressed,
                     selectedDates = selectedDates,
+                    dateCircleDiameter = dateCircleDiameter,
                 )
         }
         currentWorkingDate = currentWorkingDate.plusDays(lengthOfWeek.toLong())
@@ -73,7 +80,8 @@ private fun WeekRow(
     absoluteEndDate: LocalDate = LocalDate.MAX,
     verticalPadding: Dp,
     selectedDates: Collection<CalendarDate>,
-    onDayPressed: (Long) -> Unit,
+    onDayPressed: ((Long) -> Unit)?,
+    dateCircleDiameter: Dp,
 ) {
     Row(modifier = Modifier
         .fillMaxWidth()
@@ -93,7 +101,8 @@ private fun WeekRow(
                 dateTextStyle = dateBackgroundColourAndTextStyle.second,
                 onDayPressed = onDayPressed,
                 dayInMilli = runningDateEpochMilli,
-                isOutOfRange = isOutOfRange
+                isOutOfRange = isOutOfRange,
+                circleDiameter = dateCircleDiameter,
             )
             runningDate = runningDate.plusDays(1L)
         }

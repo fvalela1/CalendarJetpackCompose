@@ -3,7 +3,6 @@ package com.fvalela.calendarjetpackcompose.date
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -15,17 +14,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.Dp
 
 @Composable
 internal fun SingleDate(
     day: Int,
     modifier: Modifier = Modifier,
-    onDayPressed: (Long) -> Unit,
+    onDayPressed: ((Long) -> Unit)?,
     dayInMilli: Long,
     dateBackgroundColour: Color,
     dateTextStyle: TextStyle,
-    isOutOfRange: Boolean = false
+    isOutOfRange: Boolean,
+    circleDiameter: Dp,
 ) {
     val backgroundColor =
         when (dateBackgroundColour) {
@@ -37,7 +37,7 @@ internal fun SingleDate(
         if (dateTextStyle == TextStyle.Default) {
             MaterialTheme.typography.body1.copy(color =
                 if (isOutOfRange)
-                    MaterialTheme.colors.secondary.copy(alpha = 0.75f)
+                    MaterialTheme.colors.secondary.copy(alpha = 0.5f)
                 else
                     MaterialTheme.colors.onBackground
             )
@@ -45,23 +45,28 @@ internal fun SingleDate(
             dateTextStyle
         }
 
+    var dateModifier = modifier
+        .clip(CircleShape)
+        .background(backgroundColor)
+
+    if (onDayPressed != null) {
+        dateModifier = dateModifier.clickable {
+            onDayPressed(dayInMilli)
+        }
+    }
+
     Box(
-        modifier = modifier
-            .padding(1.dp)
-            .clip(CircleShape)
-            .background(backgroundColor)
-            .clickable {
-                onDayPressed(dayInMilli)
-            }
+        modifier = dateModifier
             .layout { measurable, constraints ->
-                val boxSize = minOf(constraints.maxWidth, constraints.maxHeight)
+                val resolvedCircleDiameterInt = circleDiameter.toPx().toInt()
+                    .coerceIn(constraints.minHeight, minOf(constraints.maxWidth, constraints.maxHeight))
 
                 val placeable = measurable.measure(
                     constraints.copy(
-                        minWidth = boxSize,
-                        maxWidth = boxSize,
-                        minHeight = boxSize,
-                        maxHeight = boxSize,
+                        minWidth = resolvedCircleDiameterInt,
+                        maxWidth = resolvedCircleDiameterInt,
+                        minHeight = resolvedCircleDiameterInt,
+                        maxHeight = resolvedCircleDiameterInt,
                     )
                 )
 

@@ -23,7 +23,8 @@ var lengthOfWeek: Int = 0
 fun CalendarJetpackCompose(
     year: Int = 0,
     month: Int = 0,
-    onDayPressed: (Long) -> Unit = { /*no op*/ },
+//    onDayPressed: (Long) -> Unit = { /*no op*/ }, // todo (fvalela - issue#): allow to pass in null
+    onDayPressed: ((Long) -> Unit)? = null,
     onNavigateMonthPressed: (Int, Int) -> Unit = { _, _ -> /*no op*/ },
     canNavigateMonths: Boolean = false,
     useMonthShortName: Boolean = true,
@@ -34,6 +35,7 @@ fun CalendarJetpackCompose(
             R.drawable.ic_baseline_keyboard_arrow_right_24
         ),
     verticalPadding: Dp = 0.dp,
+    dateCircleDiameter: Dp = 42.dp
     // todo (fvalela - issue#): allow user to adjust what start and end day is (weekly view, for example)
     //    startDay: Int = 1,
     //    endDay: Int = 100,
@@ -95,6 +97,7 @@ fun CalendarJetpackCompose(
             onDayPressed = onDayPressed,
             verticalPadding = verticalPadding,
             selectedDates = selectedDates,
+            dateCircleDiameter = dateCircleDiameter,
         )
     }
 }
