@@ -10,11 +10,13 @@ A Jetpack Compose Calendar library to easily add calendar functionality to your 
 
 ## Samples
 
-**Default Calendar**
+**Single Month Calendar**
+
+_The Default Calendar_
 
 <img width="205" alt="default_calendar" src="https://user-images.githubusercontent.com/12566260/111803752-9619bc00-888c-11eb-8bfc-e03622bcf7f1.png">
 
-[link to sample]
+sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SingleMonthCalendar.kt)
 ```
 CalendarJetpackCompose() // defaults to your current year + month
 ```
@@ -23,7 +25,7 @@ CalendarJetpackCompose() // defaults to your current year + month
 
 <img src="https://user-images.githubusercontent.com/12566260/111799330-26a1cd80-8888-11eb-88f5-939f8e8833be.png" width="205"/>
 
-[link to sample]
+sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithIncreasedVerticalPaddingCalendar.kt)
 ```
 CalendarJetpackCompose(
     verticalPadding = 10.dp
@@ -34,7 +36,7 @@ CalendarJetpackCompose(
 
 <img src="https://user-images.githubusercontent.com/12566260/111799936-b47db880-8888-11eb-8a6f-1981fe88e26d.gif" width="205"/>
 
-[link to sample]
+sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithMonthNavigationCalendar.kt)
 ```
 CalendarJetpackCompose(
     canNavigateMonths = true, // true if month nav arrows are visible or not
@@ -48,7 +50,7 @@ CalendarJetpackCompose(
 
 <img src="https://user-images.githubusercontent.com/12566260/111799533-56e96c00-8888-11eb-893e-d0985933d039.gif" width="205"/>
 
-[link to sample]
+sample: [CustomMonthNavArrowsCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/CustomMonthNavArrowsCalendar.kt)
 ```
 CalendarJetpackCompose(
     year = year,
@@ -86,12 +88,12 @@ CalendarJetpackCompose(
 
 <img src="https://user-images.githubusercontent.com/12566260/111799368-30c3cc00-8888-11eb-8d7e-89716d818312.gif" width="205"/>
 
-[link to sample]
+sample: [SelectDateOneColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateOneColourCalendar.kt)
 
 
 **Select Date with Multiple Colours + Padding**
 
 <img src="https://user-images.githubusercontent.com/12566260/111799485-4a651380-8888-11eb-94fc-352b45ca085b.gif" width="205"/>
 
-[link to sample]
+sample: [SelectDateMultiColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateMultiColourCalendar.kt)
 
