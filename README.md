@@ -63,7 +63,7 @@ CalendarJetpackCompose(
 
 ### Selected Dates
 
-The library has a model `CalendarDate` [link]() that you can use to customize the selected dates. 
+The library has a model - [CalendarDate.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/CalendarJetPackCompose/src/main/java/com/fvalela/calendarjetpackcompose/model/CalendarDate.kt) - that you can use to customize the selected dates. 
 The model includes 
 * `dateInMilli: Long` - the date in milliseconds from epoch.
 * `backgroundColour: Color` - the colour of the background when selected.
