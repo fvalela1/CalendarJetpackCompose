@@ -22,8 +22,6 @@ class DefaultWithIncreasedVerticalPaddingCalendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val viewModel = ViewModelProvider(this).get(CalendarViewModel::class.java)
-
         setContent {
             CalendarJetpackComposeSampleTheme(darkTheme = false) {
                 Surface(
@@ -31,8 +29,7 @@ class DefaultWithIncreasedVerticalPaddingCalendar : AppCompatActivity() {
                     modifier = Modifier.fillMaxHeight()
                 ) {
                     Column(Modifier.fillMaxSize()) {
-                        DefaultWithIncreasedVerticalPaddingCalendarHelper(viewModel = viewModel)
-                        DatesList(viewModel)
+                        DefaultWithIncreasedVerticalPaddingCalendarHelper()
                     }
                 }
             }
@@ -41,13 +38,8 @@ class DefaultWithIncreasedVerticalPaddingCalendar : AppCompatActivity() {
 }
 
 @Composable
-private fun DefaultWithIncreasedVerticalPaddingCalendarHelper(viewModel: CalendarViewModel) {
-    val month: Int by viewModel.selectedMonth.observeAsState(initial = 0)
-    val year: Int by viewModel.selectedYear.observeAsState(initial = 0)
-
+private fun DefaultWithIncreasedVerticalPaddingCalendarHelper() {
     CalendarJetpackCompose(
-        year = year,
-        month = month,
         verticalPadding = 10.dp
     )
 }
