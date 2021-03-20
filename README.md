@@ -1,3 +1,21 @@
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  </ol>
+</details>
+
 # CalendarJetpackCompose
 A Jetpack Compose Calendar library to easily add calendar functionality to your Android app.
 
@@ -7,36 +25,79 @@ A Jetpack Compose Calendar library to easily add calendar functionality to your 
 - create release tag
 - add to jitpack
 
-## Samples
+## Getting Started
+### Prerequisites
+
+In order to be able to use `CalendarJetpackCompose`, it is required to configure `Jetpack`. Follow the steps in [this](https://developer.android.com/jetpack/compose/setup) tutorial to configure your dev environment accordingly.
+
+### Installation
+
+1. Clone the repo
+    
+    **HTTPS**
+    ```sh
+   git clone https://github.com/fvalela1/CalendarJetpackCompose.git
+   ```
+   **SSH**
+   ```sh
+   git clone git@github.com:fvalela1/CalendarJetpackCompose.git
+   ```
+2. Open Android Studio and add `CalendarJetpackCompose` to your project
+3. **TODO** Configure the next steps
+## Usage
 
 **Single Month Calendar**
+<table>
+<tr><td> Source </td> <td> Result </td></tr>
+<tr>
+<td>
 
-_The Default Calendar_
-
-<img width="205" alt="default_calendar" src="https://user-images.githubusercontent.com/12566260/111803752-9619bc00-888c-11eb-8bfc-e03622bcf7f1.png">
-
-sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SingleMonthCalendar.kt)
-```
+```kotlin
 CalendarJetpackCompose() // defaults to your current year + month
 ```
 
+sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SingleMonthCalendar.kt)
+
+</td>
+<td>
+
+<img width="250" alt="Screenshot" src="docs/images/Default_Calendar.png">
+
+</td>
+</tr>
+</table>
+
 **Default Calendar With Vertical Padding**
+<table>
+<tr><td> Source </td> <td> Result </td></tr>
+<tr>
+<td>
 
-<img src="https://user-images.githubusercontent.com/12566260/111799330-26a1cd80-8888-11eb-88f5-939f8e8833be.png" width="205"/>
-
-sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithIncreasedVerticalPaddingCalendar.kt)
-```
+```kotlin
 CalendarJetpackCompose(
     verticalPadding = 10.dp
 )
 ```
 
+sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithIncreasedVerticalPaddingCalendar.kt)
+
+</td>
+<td>
+
+<img width="250" alt="Screenshot" src="docs/images/Default_Calendar_Vertical_Padding.png">
+
+</td>
+</tr>
+</table>
+
+
 **Default Calendar With Month Navigation**
+<table>
+<tr><td> Source </td> <td> Result </td></tr>
+<tr>
+<td>
 
-<img src="https://user-images.githubusercontent.com/12566260/111799936-b47db880-8888-11eb-8a6f-1981fe88e26d.gif" width="205"/>
-
-sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithMonthNavigationCalendar.kt)
-```
+```kotlin
 CalendarJetpackCompose(
     canNavigateMonths = true, // true if month nav arrows are visible or not
     onNavigateMonthPressed = viewModel::updateSelectedMonth, // function to trigger when a month navigation arrow is pressed
@@ -45,12 +106,24 @@ CalendarJetpackCompose(
 )
 ```
 
+sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithMonthNavigationCalendar.kt)
+
+</td>
+<td>
+
+<img width="350" alt="Screenshot" src="docs/images/Default_Calendar_Month_Navigation.gif">
+
+</td>
+</tr>
+</table>
+
 **Custom Month Navigation Arrows** 
+<table>
+<tr><td> Source </td> <td> Result </td></tr>
+<tr>
+<td>
 
-<img src="https://user-images.githubusercontent.com/12566260/111799533-56e96c00-8888-11eb-893e-d0985933d039.gif" width="205"/>
-
-sample: [CustomMonthNavArrowsCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/CustomMonthNavArrowsCalendar.kt)
-```
+```kotlin
 CalendarJetpackCompose(
     year = year,
     month = month,
@@ -59,6 +132,17 @@ CalendarJetpackCompose(
     navigateMonthDrawableIds = Pair(R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground), // add in your own drawables to replace the month nav arrows
 )
 ```
+
+sample: [CustomMonthNavArrowsCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/CustomMonthNavArrowsCalendar.kt)
+
+</td>
+<td>
+
+<img width="350" alt="Screenshot" src="docs/images/Custom_Nav_Buttons.gif">
+
+</td>
+</tr>
+</table>
 
 ### Selected Dates
 
@@ -72,7 +156,15 @@ The below samples are a showcase of using either a single colour or multiple col
 
 `convertSelectedDatesToCalendarDates()` can be found in any of the samples.
 
-```
+
+
+**Select Date with One Colour**
+<table>
+<tr><td> Source </td> <td> Result </td></tr>
+<tr>
+<td>
+
+```kotlin
 CalendarJetpackCompose(
     year = year,
     month = month,
@@ -83,12 +175,16 @@ CalendarJetpackCompose(
 )
 ```
 
-**Select Date with One Colour**
-
-<img src="https://user-images.githubusercontent.com/12566260/111799368-30c3cc00-8888-11eb-8d7e-89716d818312.gif" width="205"/>
-
 sample: [SelectDateOneColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateOneColourCalendar.kt)
 
+</td>
+<td>
+
+<img width="350" alt="Screenshot" src="docs/images/Single_Colour_Date_Selection.gif">
+
+</td>
+</tr>
+</table>
 
 **Select Date with Multiple Colours + Padding**
 
