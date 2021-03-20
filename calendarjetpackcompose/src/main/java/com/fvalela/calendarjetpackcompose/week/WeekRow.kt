@@ -10,9 +10,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import com.fvalela.calendarjetpackcompose.DAY_IN_MILLI
 import com.fvalela.calendarjetpackcompose.date.SingleDate
-import com.fvalela.calendarjetpackcompose.lengthOfWeek
 import com.fvalela.calendarjetpackcompose.differenceBetweenTimeLibEndDayOfWeekAndPassedEndDayOfWeek
 import com.fvalela.calendarjetpackcompose.differenceBetweenTimeLibStartDayOfWeekAndPassedStartDayOfWeek
+import com.fvalela.calendarjetpackcompose.lengthOfWeek
 import com.fvalela.calendarjetpackcompose.model.CalendarDate
 import com.fvalela.calendarjetpackcompose.ui.DateTextStyle
 import java.time.LocalDate
@@ -27,7 +27,7 @@ internal fun WeekRows(
     selectedDates: Collection<CalendarDate>,
     dateCircleDiameter: Dp,
 ) {
-    // todo (fvalela - issue#): add functionality to start and end week at specific weekdays
+    // todo (fvalela - #3): add functionality to start and end week at specific weekdays
     //    val startWeekDay = startDate.dayOfWeek.value
     //    val endWeekDay = endDate.dayOfWeek.value
 

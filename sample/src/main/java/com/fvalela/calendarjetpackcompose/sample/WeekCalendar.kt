@@ -1,6 +1,6 @@
 package com.fvalela.calendarjetpackcompose.sample
 
-// todo (fvalela - issue#): create implementation and sample for week calendar
+// todo (fvalela - #4): create implementation and sample for week calendar
 class WeekCalendar {
     //    Calendar(
     //        year = year,

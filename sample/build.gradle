@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-    implementation project(':CalendarJetPackCompose')
+    implementation project(':calendarjetpackcompose')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$core_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"

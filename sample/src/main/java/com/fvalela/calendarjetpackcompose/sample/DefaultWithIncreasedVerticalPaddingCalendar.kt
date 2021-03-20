@@ -9,14 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModelProvider
 import com.fvalela.calendarjetpackcompose.CalendarJetpackCompose
 import com.fvalela.calendarjetpackcompose.sample.ui.CalendarJetpackComposeSampleTheme
-import com.fvalela.calendarjetpackcompose.sample.viewmodel.CalendarViewModel
 
 class DefaultWithIncreasedVerticalPaddingCalendar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

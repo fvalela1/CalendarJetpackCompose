@@ -13,7 +13,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
 import com.fvalela.calendarjetpackcompose.CalendarJetpackCompose
 import com.fvalela.calendarjetpackcompose.model.CalendarDate

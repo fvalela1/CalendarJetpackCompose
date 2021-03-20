@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendarJetpackCompose">
         <activity
-            android:name="com.fvalela.calendarjetpackcompose.sample.DefaultCalendar"
+            android:name="com.fvalela.calendarjetpackcompose.sample.SelectDateMultiColourCalendar"
             android:label="@string/app_name"
             android:theme="@style/Theme.CalendarJetpackCompose.NoActionBar">
             <intent-filter>

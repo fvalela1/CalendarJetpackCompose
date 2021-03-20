@@ -1,6 +1,9 @@
 package com.fvalela.calendarjetpackcompose
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -23,7 +26,6 @@ var lengthOfWeek: Int = 0
 fun CalendarJetpackCompose(
     year: Int = 0,
     month: Int = 0,
-//    onDayPressed: (Long) -> Unit = { /*no op*/ }, // todo (fvalela - issue#): allow to pass in null
     onDayPressed: ((Long) -> Unit)? = null,
     onNavigateMonthPressed: (Int, Int) -> Unit = { _, _ -> /*no op*/ },
     canNavigateMonths: Boolean = false,
@@ -36,7 +38,7 @@ fun CalendarJetpackCompose(
         ),
     verticalPadding: Dp = 0.dp,
     dateCircleDiameter: Dp = 42.dp
-    // todo (fvalela - issue#): allow user to adjust what start and end day is (weekly view, for example)
+    // todo (fvalela - #2): allow user to adjust what start and end day is (weekly view, for example)
     //    startDay: Int = 1,
     //    endDay: Int = 100,
 ) {
