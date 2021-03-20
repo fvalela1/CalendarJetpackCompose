@@ -1,4 +1,7 @@
 # CalendarJetpackCompose
+
+[![](https://jitpack.io/v/fvalela1/CalendarJetpackCompose.svg)](https://jitpack.io/#fvalela1/CalendarJetpackCompose)
+
 A Jetpack Compose Calendar library to easily add calendar functionality to your Android app.
 
 <!-- TABLE OF CONTENTS -->
