@@ -47,18 +47,19 @@ implementation 'com.fvalela.calendarjetpackcompose:(latest version)'
 
 **Single Month Calendar**
 <table>
-<tr><td> Source </td> <td> Result </td></tr>
+<tr><td> Result </td> <td> Source </td></tr>
 <tr>
 <td>
 
-```kotlin
-CalendarJetpackCompose() // defaults to your current year + month
-```
+<img width="250" alt="Screenshot" src="docs/images/Default_Calendar.png">
 
 </td>
 <td>
 
-<img width="250" alt="Screenshot" src="docs/images/Default_Calendar.png">
+```kotlin
+// defaults to your current year + month
+CalendarJetpackCompose() 
+```
 
 </td>
 </tr>
@@ -68,8 +69,13 @@ Sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackComp
 
 **Default Calendar With Vertical Padding**
 <table>
-<tr><td> Source </td> <td> Result </td></tr>
+<tr><td> Result </td> <td> Source </td></tr>
 <tr>
+<td>
+
+<img width="250" alt="Screenshot" src="docs/images/Default_Calendar_Vertical_Padding.png">
+
+</td>
 <td>
 
 ```kotlin
@@ -79,11 +85,6 @@ CalendarJetpackCompose(
 ```
 
 </td>
-<td>
-
-<img width="250" alt="Screenshot" src="docs/images/Default_Calendar_Vertical_Padding.png">
-
-</td>
 </tr>
 </table>
 
@@ -91,8 +92,13 @@ Sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fval
 
 **Default Calendar With Month Navigation**
 <table>
-<tr><td> Source </td> <td> Result </td></tr>
+<tr><td> Result </td> <td> Source </td></tr>
 <tr>
+<td>
+
+<img width="250" alt="Screenshot" src="docs/images/Default_Calendar_Month_Navigation.gif">
+
+</td>
 <td>
 
 ```kotlin
@@ -106,11 +112,7 @@ CalendarJetpackCompose(
 ```
 
 </td>
-<td>
 
-<img width="350" alt="Screenshot" src="docs/images/Default_Calendar_Month_Navigation.gif">
-
-</td>
 </tr>
 </table>
 
@@ -118,8 +120,13 @@ Sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/Cale
 
 **Custom Month Navigation Arrows** 
 <table>
-<tr><td> Source </td> <td> Result </td></tr>
+<tr><td> Result </td> <td> Source </td></tr>
 <tr>
+<td>
+
+<img width="250" alt="Screenshot" src="docs/images/Custom_Nav_Buttons.gif">
+
+</td>
 <td>
 
 ```kotlin
@@ -135,11 +142,7 @@ CalendarJetpackCompose(
 ```
 
 </td>
-<td>
 
-<img width="350" alt="Screenshot" src="docs/images/Custom_Nav_Buttons.gif">
-
-</td>
 </tr>
 </table>
 
@@ -161,6 +164,19 @@ The below samples are a showcase of using either a single colour or multiple col
 
 **Select Date with Background Colours**
 <table>
+<tr><td> Result: Single Colour </td> <td> Result: Multi Colour </td></tr>
+<tr>
+<td align="center">
+
+<img width="250" alt="Screenshot" src="docs/images/Single_Colour_Date_Selection.gif">
+
+</td>
+<td align="center">
+  
+<img src="https://user-images.githubusercontent.com/12566260/111799485-4a651380-8888-11eb-94fc-352b45ca085b.gif" width="250"/>
+
+</td>
+</tr>
 <tr><td colspan="2"> Source </td></tr>
 <tr>
 <td colspan="2">
@@ -176,19 +192,6 @@ CalendarJetpackCompose(
     canNavigateMonths = true,
 )
 ```
-
-</td>
-</tr>
-<tr><td> Result: Single Colour </td> <td> Result: Multi Colour </td></tr>
-<tr>
-<td align="center">
-
-<img width="205" alt="Screenshot" src="docs/images/Single_Colour_Date_Selection.gif">
-
-</td>
-<td align="center">
-  
-<img src="https://user-images.githubusercontent.com/12566260/111799485-4a651380-8888-11eb-94fc-352b45ca085b.gif" width="205"/>
 
 </td>
 </tr>
