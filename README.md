@@ -1,3 +1,6 @@
+# CalendarJetpackCompose
+A Jetpack Compose Calendar library to easily add calendar functionality to your Android app.
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -9,41 +12,37 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#compatibility">Compatibility</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#contribute">Contribute</a></li>
   </ol>
 </details>
-
-# CalendarJetpackCompose
-A Jetpack Compose Calendar library to easily add calendar functionality to your Android app.
 
 ## TODO
 - add issues in github
 - add github issues to specific lines of code
 - create release tag
 - add to jitpack
+- add to "Getting Started" section
 
 ## Getting Started
 ### Prerequisites
 
-In order to be able to use `CalendarJetpackCompose`, it is required to configure `Jetpack`. Follow the steps in [this](https://developer.android.com/jetpack/compose/setup) tutorial to configure your dev environment accordingly.
+In order to be able to use `CalendarJetpackCompose`, it requires you to configure your environment to support `Jetpack Compose`. To do so, you can follow [these steps](https://developer.android.com/jetpack/compose/setup).
 
-### Installation
+### Compatibility
 
-1. Clone the repo
-    
-    **HTTPS**
-    ```sh
-   git clone https://github.com/fvalela1/CalendarJetpackCompose.git
-   ```
-   **SSH**
-   ```sh
-   git clone git@github.com:fvalela1/CalendarJetpackCompose.git
-   ```
-2. Open Android Studio and add `CalendarJetpackCompose` to your project
-3. **TODO** Configure the next steps
+`CalendarJetpackCompose` only works for projects with minumum Android SDKs >= 26.
+
+### Add to your project
+
+```gradle
+implementation 'com.fvalela.calendarjetpackcompose:(latest version)'
+```
+
 ## Usage
 
 **Single Month Calendar**
@@ -56,8 +55,6 @@ In order to be able to use `CalendarJetpackCompose`, it is required to configure
 CalendarJetpackCompose() // defaults to your current year + month
 ```
 
-sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SingleMonthCalendar.kt)
-
 </td>
 <td>
 
@@ -66,6 +63,8 @@ sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackComp
 </td>
 </tr>
 </table>
+
+Sample: [SingleMonthCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SingleMonthCalendar.kt)
 
 **Default Calendar With Vertical Padding**
 <table>
@@ -79,8 +78,6 @@ CalendarJetpackCompose(
 )
 ```
 
-sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithIncreasedVerticalPaddingCalendar.kt)
-
 </td>
 <td>
 
@@ -90,6 +87,7 @@ sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fval
 </tr>
 </table>
 
+Sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithIncreasedVerticalPaddingCalendar.kt)
 
 **Default Calendar With Month Navigation**
 <table>
@@ -100,13 +98,12 @@ sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fval
 ```kotlin
 CalendarJetpackCompose(
     canNavigateMonths = true, // true if month nav arrows are visible or not
-    onNavigateMonthPressed = viewModel::updateSelectedMonth, // function to trigger when a month navigation arrow is pressed
+    // function that triggers when a month navigation arrow is pressed
+    onNavigateMonthPressed = viewModel::updateSelectedMonth, 
     year = year, // year in view
     month = month, // month in view
 )
 ```
-
-sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithMonthNavigationCalendar.kt)
 
 </td>
 <td>
@@ -116,6 +113,8 @@ sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/Cale
 </td>
 </tr>
 </table>
+
+Sample: [DefaultWithMonthNavigationCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/DefaultWithMonthNavigationCalendar.kt)
 
 **Custom Month Navigation Arrows** 
 <table>
@@ -129,11 +128,11 @@ CalendarJetpackCompose(
     month = month,
     onNavigateMonthPressed = viewModel::updateSelectedMonth,
     canNavigateMonths = true,
-    navigateMonthDrawableIds = Pair(R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground), // add in your own drawables to replace the month nav arrows
+    // add in your own drawables to replace the month nav arrows
+    navigateMonthDrawableIds = 
+      Pair(R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground), 
 )
 ```
-
-sample: [CustomMonthNavArrowsCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/CustomMonthNavArrowsCalendar.kt)
 
 </td>
 <td>
@@ -143,6 +142,8 @@ sample: [CustomMonthNavArrowsCalendar.kt](https://github.com/fvalela1/CalendarJe
 </td>
 </tr>
 </table>
+
+Sample: [CustomMonthNavArrowsCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/CustomMonthNavArrowsCalendar.kt)
 
 ### Selected Dates
 
@@ -155,40 +156,63 @@ The model takes in three parameters:
 The below samples are a showcase of using either a single colour or multiple colours as backgrounds for the selected dates.
 
 `convertSelectedDatesToCalendarDates()` can be found in any of the samples.
+`updateSelectedDate(newDate: Long)` can be found in [ViewModel.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/viewmodel/CalendarViewModel.kt)
 
 
-
-**Select Date with One Colour**
+**Select Date with Background Colours**
 <table>
-<tr><td> Source </td> <td> Result </td></tr>
+<tr><td colspan="2"> Source </td></tr>
 <tr>
-<td>
+<td colspan="2">
 
 ```kotlin
 CalendarJetpackCompose(
     year = year,
     month = month,
     selectedDates = convertSelectedDatesToCalendarDates(dates = selectedDates),
-    onDayPressed = viewModel::updateSelectedDate, // function to trigger when a day is pressed. It takes in a long (date in milliseconds from epoch)
+    // function to trigger when a day is pressed. Param - date in milliseconds: Long
+    onDayPressed = viewModel::updateSelectedDate, 
     onNavigateMonthPressed = viewModel::updateSelectedMonth,
     canNavigateMonths = true,
 )
 ```
 
-sample: [SelectDateOneColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateOneColourCalendar.kt)
+</td>
+</tr>
+<tr><td> Result: Single Colour </td> <td> Result: Multi Colour </td></tr>
+<tr>
+<td align="center">
+
+<img width="205" alt="Screenshot" src="docs/images/Single_Colour_Date_Selection.gif">
 
 </td>
-<td>
-
-<img width="350" alt="Screenshot" src="docs/images/Single_Colour_Date_Selection.gif">
+<td align="center">
+  
+<img src="https://user-images.githubusercontent.com/12566260/111799485-4a651380-8888-11eb-94fc-352b45ca085b.gif" width="205"/>
 
 </td>
 </tr>
 </table>
 
-**Select Date with Multiple Colours + Padding**
+Samples: 
+* [SelectDateOneColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateOneColourCalendar.kt)
+* [SelectDateMultiColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateMultiColourCalendar.kt)
 
-<img src="https://user-images.githubusercontent.com/12566260/111799485-4a651380-8888-11eb-94fc-352b45ca085b.gif" width="205"/>
 
-sample: [SelectDateMultiColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateMultiColourCalendar.kt)
+### Contribute
 
+0. Ensure your environment supports Jetpack Compose (see [Prerequisites](#prerequisites)).
+1. Clone the repo
+    
+    **HTTPS**
+    ```sh
+   git clone https://github.com/fvalela1/CalendarJetpackCompose.git
+   ```
+   **SSH**
+   ```sh
+   git clone git@github.com:fvalela1/CalendarJetpackCompose.git
+   ```
+2. Open Android Studio and import the `CalendarJetpackCompose` project
+3. Make necessary changes
+4. Submit a PR
+5. Eat a slice of cake because you're awesome!
