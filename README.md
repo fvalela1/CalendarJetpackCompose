@@ -21,6 +21,7 @@ A Jetpack Compose Calendar library to easily add calendar functionality to your 
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contribute">Contribute</a></li>
+    <li><a href="#license">License</a></li>
   </ol>
 </details>
 
@@ -215,7 +216,7 @@ Samples:
 * [SelectDateMultiColourCalendar.kt](https://github.com/fvalela1/CalendarJetpackCompose/blob/main/sample/src/main/java/com/fvalela/calendarjetpackcompose/sample/SelectDateMultiColourCalendar.kt)
 
 
-### Contribute
+## Contribute
 
 0. Ensure your environment supports Jetpack Compose (see [Prerequisites](#prerequisites)).
 1. Clone the repo
@@ -232,3 +233,20 @@ Samples:
 3. Make necessary changes
 4. Submit a PR
 5. Eat a slice of cake because you're awesome!
+
+## License
+```
+Copyright 2020 Francesco Valela
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
