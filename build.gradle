@@ -12,6 +12,7 @@ buildscript {
         junit_androidx_version = '1.1.2'
         junit_version = '4.13.2'
         desugar_jdk_libs_version = '1.1.5'
+        android_maven_gradle_plugin_version = "2.1"
     }
     repositories {
         google()
@@ -23,6 +24,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0-alpha10'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath"com.github.dcendents:android-maven-gradle-plugin:$android_maven_gradle_plugin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -33,6 +35,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
