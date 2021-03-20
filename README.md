@@ -1,4 +1,7 @@
 # CalendarJetpackCompose
+
+[![](https://jitpack.io/v/fvalela1/CalendarJetpackCompose.svg)](https://jitpack.io/#fvalela1/CalendarJetpackCompose)
+
 A Jetpack Compose Calendar library to easily add calendar functionality to your Android app.
 
 <!-- TABLE OF CONTENTS -->
@@ -21,11 +24,6 @@ A Jetpack Compose Calendar library to easily add calendar functionality to your 
   </ol>
 </details>
 
-## TODO
-- create release tag
-- add to jitpack
-- add to "Getting Started" section
-
 ## Getting Started
 ### Prerequisites
 
@@ -35,10 +33,23 @@ In order to be able to use `CalendarJetpackCompose`, it requires you to configur
 
 `CalendarJetpackCompose` only works for projects with minumum Android SDKs >= 26.
 
-### Add to your project
+### Installation
+In your project `build.gradle`, add:
 
 ```gradle
-implementation 'com.fvalela.calendarjetpackcompose:(latest version)'
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+In your module `build.gradle`, add:
+
+```gradle
+dependencies {
+  implementation 'com.github.fvalela1:CalendarJetpackCompose:$version'
+}
 ```
 
 ## Usage
