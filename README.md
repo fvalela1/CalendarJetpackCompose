@@ -22,8 +22,6 @@ A Jetpack Compose Calendar library to easily add calendar functionality to your 
 </details>
 
 ## TODO
-- add issues in github
-- add github issues to specific lines of code
 - create release tag
 - add to jitpack
 - add to "Getting Started" section
@@ -103,8 +101,9 @@ Sample: [DefaultWithIncreasedVerticalPaddingCalendar.kt](https://github.com/fval
 
 ```kotlin
 CalendarJetpackCompose(
-    canNavigateMonths = true, // true if month nav arrows are visible or not
-    // function that triggers when a month navigation arrow is pressed
+    // true if month nav arrows are visible or not
+    canNavigateMonths = true, 
+    // function that triggers when a month nav arrow is pressed
     onNavigateMonthPressed = viewModel::updateSelectedMonth, 
     year = year, // year in view
     month = month, // month in view
@@ -135,9 +134,12 @@ CalendarJetpackCompose(
     month = month,
     onNavigateMonthPressed = viewModel::updateSelectedMonth,
     canNavigateMonths = true,
-    // add in your own drawables to replace the month nav arrows
+    // add your own drawables to replace the default arrows
     navigateMonthDrawableIds = 
-      Pair(R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground), 
+      Pair(
+        R.drawable.ic_launcher_background, 
+        R.drawable.ic_launcher_foreground
+      ), 
 )
 ```
 
